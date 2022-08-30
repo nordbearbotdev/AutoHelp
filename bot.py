@@ -22,9 +22,7 @@ if message.text == "Module rich not found":
    bot.send_message(message.from_user.id, 'Напишите в консоли, pip install rich'
                     
 if message.text == "DEBUG:urllib3.connectionpool:Starting new HTTPS conection":
-   bot.send_message(message.from_user.id, 'Данная ошибка обозначает что идет созданиие нового HTTPS подлючения, но если после этого ничего не происходит, проверьте валидность ваших аккаунтов в ботнете.
-
-'
+   bot.send_message(message.from_user.id, 'Данная ошибка обозначает что идет созданиие нового HTTPS подлючения, но если после этого ничего не происходит, проверьте валидность ваших аккаунтов в ботнете.'
                     
 if message.text == "DEBUG | vk_bottle.polling,user_polling.get_event":
    bot.send_message(message.from_user.id, 'Если вы встретились с этим, то удалите ботнет и скачайте его новую версию. в ней были убраны логи от vk_bottle.'                    
