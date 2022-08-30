@@ -22,7 +22,10 @@ async def stats(message):
 @dp.message_handler(text=['DEBUG:urllib3.connectionpool:Starting new HTTPS conection'])
 async def stats(message):
 	await message.answer("Данная ошибка обозначает что идет созданиие нового HTTPS подлючения, но если после этого ничего не происходит, проверьте валидность ваших аккаунтов в ботнете")    
-    
+
+@dp.message_handler(text=['Termux'])
+async def stats(message):
+	await message.answer("С недавних пор, у Google поменялась политика в отношении работы с файлами. Поэтому, рекомундую скачивать Termux с F-Droid во избежание ошибок связанных с работой с памятью вашего телефона.")	
 
 inline_btn_1 = InlineKeyboardButton('➕ Добавить меня в группу', url="http://t.me/PeperHelperBot?startgroup=start")
 inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
