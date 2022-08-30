@@ -25,7 +25,28 @@ async def stats(message):
 
 @dp.message_handler(text=['Termux'])
 async def stats(message):
-	await message.answer("С недавних пор, у Google поменялась политика в отношении работы с файлами. Поэтому, рекомундую скачивать Termux с F-Droid во избежание ошибок связанных с работой с памятью вашего телефона.")	
+	await message.answer("С недавних пор, у Google поменялась политика в отношении работы с файлами. Поэтому, рекомундую скачивать Termux с F-Droid во избежание ошибок связанных с работой с памятью вашего телефона.")
+	
+@dp.message_handler(text=['Module openssl not found'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install openssl")
+
+@dp.message_handler(text=['Module tgcrypto not found'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install tgcrypto")
+
+@dp.message_handler(text=['Module vk_bottle not found'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install vk_bottle")
+
+@dp.message_handler(text=['Module pyrogram not found'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install pyrogram")
+
+
+@dp.message_handler(text=['fatal: destination path 'vk-raid-botnet' already exists and is not an empty directory. '])
+async def stats(message):
+	await message.answer("Удалите ботнет, и повторите все снова")	
 
 inline_btn_1 = InlineKeyboardButton('➕ Добавить меня в группу', url="http://t.me/PeperHelperBot?startgroup=start")
 inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
