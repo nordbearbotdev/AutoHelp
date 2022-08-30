@@ -19,7 +19,7 @@ pip install logging  # Установить logging
 Затем
 
 ```bash
-python3 bot.py
+python3 bot.py # Запуск бота на сервере.
 ```
 
 ### Помощь
