@@ -29,6 +29,7 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 async def process_command_1(message: types.Message):
     await message.answer(f"<b>👋🏻 Привет, я Pepe Helper! Отвечу на ваши вопросы связанные с установкой ботнета!</b>", parse_mode='html', reply_markup=inline_kb1)
 
-
+if name == "main":
+    executor.start_polling(dp, skip_updates=True)
 
 
