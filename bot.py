@@ -38,7 +38,7 @@ async def ping(message: types.Message):
         b = time.time()
         await bot_msg.edit_text(f'<b>⏱ Пинг: {round((b - a) * 1000)} ms</b>', parse_mode='html')
 
-if name == "main":
+if name == "__main__":
     executor.start_polling(dp, skip_updates=True)
 
 
