@@ -30,6 +30,10 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 async def process_command_1(message: types.Message):
     await message.answer(f"<b>👋🏻 Привет, я Pepe Helper! Отвечу на ваши вопросы связанные с установкой ботнета!</b>", parse_mode='html', reply_markup=inline_kb1)
 
+@dp.message_handler(commands=['guide'])
+async def process_command_1(message: types.Message):
+    await message.answer(f"<b>Инструкция как установить ботнет!</b>", parse_mode='html', reply_markup=inline_kb1)
+
 @dp.message_handler(commands=['ping', 'пинг', '.'], commands_prefix=["/", "!"])
 async def ping(message: types.Message):
     a = time.time()
