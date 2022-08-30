@@ -10,7 +10,6 @@ def send_welcome(message):
 def echo_all(message):
     bot.reply_to(message, message.text)
 
-bot.polling()
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
@@ -34,3 +33,5 @@ if message.text == "DEBUG | vk_bottle.polling,user_polling.get_event":
 #Если пользователь отправил слово/фразу, на которое(ую) нет ответа
 else:
    bot.send_message(message.from_user.id, "Извините, я Вас не понимаю")
+
+bot.polling()                    
