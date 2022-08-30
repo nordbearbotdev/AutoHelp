@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 async def stats(message):
 	await message.answer("Напишите в консоли, pip install vk_bottle")
 
-@dp.message_handler(text=['Напишите в консоли, pip install rich'])
+@dp.message_handler(text=['Module rich not found'])
 async def stats(message):
 	await message.answer("Напишите в консоли, pip install rich")
     
