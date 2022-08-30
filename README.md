@@ -7,6 +7,8 @@
 pip install aiogram  # Установить aiogram
 ```
 
+Затем
+
 ```bash
 pip install logging  # Установить logging
 ```
