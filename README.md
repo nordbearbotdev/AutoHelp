@@ -4,7 +4,11 @@
 ### Установка
 
 ```bash
-pip install aiogram
+pip install aiogram  # Установить aiogram
+```
+
+```bash
+pip install logging  # Установить logging
 ```
 
 ### Помощь
