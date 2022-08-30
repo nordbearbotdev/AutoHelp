@@ -7,10 +7,16 @@
 pip install aiogram  # Установить aiogram
 ```
 
-Затем
+Далее
 
 ```bash
 pip install logging  # Установить logging
+```
+
+Затем
+
+```bash
+python3 bot.py
 ```
 
 ### Помощь
