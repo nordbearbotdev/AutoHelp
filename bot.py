@@ -1,35 +1,34 @@
-import telebot
+import logging
+import aiogram 
+from aiogram import Bot, Dispatcher, executor, types
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-bot = telebot.TeleBot("TOKEN")
+bot = Bot(token='')
+dp = Dispatcher(bot)
 
-@bot.message_handler(commands=['start', 'help'])
-def send_welcome(message):
-    bot.reply_to(message, "Я родился!")
+logging.basicConfig(level=logging.INFO)
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-    bot.reply_to(message, message.text)
+@dp.message_handler(text=['Module vk_bottle not found'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install vk_bottle")
 
+@dp.message_handler(text=['Напишите в консоли, pip install rich'])
+async def stats(message):
+	await message.answer("Напишите в консоли, pip install rich")
+    
+@dp.message_handler(text=['DEBUG:urllib3.connectionpool:Starting new HTTPS conection'])
+async def stats(message):
+	await message.answer("Данная ошибка обозначает что идет созданиие нового HTTPS подлючения, но если после этого ничего не происходит, проверьте валидность ваших аккаунтов в ботнете")    
+    
 
-@bot.message_handler(content_types=['text'])
-def handle_text(message):
+inline_btn_1 = InlineKeyboardButton('➕ Добавить меня в группу', url="http://t.me/PeperHelperBot?startgroup=start")
+inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 
-# Тригеры
-if message.text == "Module vk_bottle not found":
-   bot.send_message(message.from_user.id, 'Напишите в консоли, pip install vk_bottle'
-                    
-if message.text == "Module rich not found":
-   bot.send_message(message.from_user.id, 'Напишите в консоли, pip install rich'
-                    
-if message.text == "DEBUG:urllib3.connectionpool:Starting new HTTPS conection":
-   bot.send_message(message.from_user.id, 'Данная ошибка обозначает что идет созданиие нового HTTPS подлючения, но если после этого ничего не происходит, проверьте валидность ваших аккаунтов в ботнете.'
-                    
-if message.text == "DEBUG | vk_bottle.polling,user_polling.get_event":
-   bot.send_message(message.from_user.id, 'Если вы встретились с этим, то удалите ботнет и скачайте его новую версию. в ней были убраны логи от vk_bottle.'                    
+#bot.py
+@dp.message_handler(commands=['start'])
+async def process_command_1(message: types.Message):
+    await message.answer(f"<b>👋🏻 Привет, я Pepe Helper! Отвечу на ваши вопросы связанные с установкой ботнета!</b>", parse_mode='html', reply_markup=inline_kb1)
 
 
-#Если пользователь отправил слово/фразу, на которое(ую) нет ответа
-else:
-   bot.send_message(message.from_user.id, "Извините, я Вас не понимаю")
 
-bot.polling()                    
+
