@@ -39,5 +39,8 @@ python3 bot.py # Запуск бота на сервере.
 ## Примеры
 
 ```python
-
+@dp.message_handler(text=['Ошибка'])
+async def stats(message):
+	await message.answer("Ответ")
+  
 ```
